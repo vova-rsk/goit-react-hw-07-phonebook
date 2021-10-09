@@ -8,7 +8,7 @@ const items = createReducer([], {
 });
 
 const filter = createReducer('', {
-  [changeFilter]: (state, action) => action.payload,
+  [changeFilter]: (_, action) => action.payload,
 });
 
 const contactsReducer = combineReducers({ items, filter });
