@@ -11,12 +11,12 @@ export const getContacts = () => dispatch => {
 };
 
 export const addContact = contact => dispatch => {
-  dispatch(actions.getContactsRequest());
+  dispatch(actions.addContactRequest());
 
   serviceApi
     .postContact(contact)
-    .then(res => dispatch(actions.getContactsSuccess(res.data)))
-    .catch(error => dispatch(actions.getContactsError(error)));
+    .then(res => dispatch(actions.addContactSuccess(res.data)))
+    .catch(error => dispatch(actions.addContactError(error)));
 };
 
 export const deleteContact = id => dispatch => {

@@ -1,7 +1,10 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'http://localhost:3004';
 
-const fetchContacts = async () => await axios.get('/contacts');
+const fetchContacts = async () => {
+  return await axios.get('/contacts');
+};
 
 const postContact = async contactToAdd => {
   return await axios.post('/contacts', contactToAdd, { method: 'POST' });

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteContact } from '../../../redux/contacts/contacts-operations';
+import * as operations from '../../../redux/contacts/contacts-operations';
 import ListItem from './ContactItem.styled';
 
 const ContactItem = ({ id, name, number }) => {
@@ -9,7 +9,7 @@ const ContactItem = ({ id, name, number }) => {
   return (
     <ListItem>
       <span>{`${name}: ${number}`}</span>
-      <button type="button" onClick={() => dispatch(deleteContact(id))}>
+      <button type="button" onClick={() => dispatch(operations.deleteContact(id))}>
         Delete
       </button>
     </ListItem>

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Form from './ContactForm.styled';
 import { getItems } from '../../redux/contacts/counter-selectors';
-// import { addContact } from '../../redux/contacts/contacts-actions';
 import * as operations from '../../redux/contacts/contacts-operations';
 import { availabilityСheck } from '../../utils/utils';
 
