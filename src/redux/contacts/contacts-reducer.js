@@ -14,21 +14,24 @@ const filter = createReducer('', {
 });
 
 const isLoading = createReducer(false, {
-  [getContacts.pending]: false,
-  [addContact.pending]: false,
-  [deleteContact.pending]: false,
-  [getContacts.fulfilled]: false,
-  [addContact.fulfilled]: false,
-  [deleteContact.fulfilled]: false,
+  [getContacts.pending]: () => true,
+  [addContact.pending]: () => true,
+  [deleteContact.pending]: () => true,
+  [getContacts.fulfilled]: () => false,
+  [addContact.fulfilled]: () => false,
+  [deleteContact.fulfilled]: () => false,
+  [getContacts.rejected]: () => false,
+  [addContact.rejected]: () => false,
+  [deleteContact.rejected]: () => false,
 });
 
 const error = createReducer(null, {
-  [getContacts.error]: (_, action) => action.payload,
-  [addContact.error]: (_, action) => action.payload,
-  [deleteContact.error]: (_, action) => action.payload,
-  [getContacts.fulfilled]: null,
-  [addContact.fulfilled]: null,
-  [deleteContact.fulfilled]: null,
+  [getContacts.rejected]: (_, action) => action.payload,
+  [addContact.rejected]: (_, action) => action.payload,
+  [deleteContact.rejected]: (_, action) => action.payload,
+  [getContacts.fulfilled]: () => null,
+  [addContact.fulfilled]: () => null,
+  [deleteContact.fulfilled]: () => null,
 });
 
 // import {
