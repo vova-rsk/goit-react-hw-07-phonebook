@@ -4,6 +4,7 @@ import Form from './ContactForm.styled';
 import { getItems } from '../../redux/contacts/counter-selectors';
 import * as operations from '../../redux/contacts/contacts-operations';
 import { availabilityСheck } from '../../utils/utils';
+import AddButton from '../AddButton';
 
 const ContactForm = () => {
   const contacts = useSelector(getItems);
@@ -66,7 +67,7 @@ const ContactForm = () => {
           value={number}
         />
       </label>
-      <button type="submit">Add contact</button>
+      <AddButton/>
     </Form>
   );
 };

@@ -34,40 +34,6 @@ const error = createReducer(null, {
   [deleteContact.fulfilled]: () => null,
 });
 
-// import {
-//   // getContactsRequest,
-//   // getContactsSuccess,
-//   // getContactsError,
-//   // addContactRequest,
-//   // addContactSuccess,
-//   // addContactError,
-//   // deleteContactRequest,
-//   // deleteContactSuccess,
-//   // deleteContactError,
-//   changeFilter,
-// } from './contacts-actions';
-
-// const items = createReducer([], {
-//   [getContactsSuccess]: (_, action) => [...action.payload],
-//   [addContactSuccess]: (state, action) => [...state, action.payload],
-//   [deleteContactSuccess]: (state, action) =>
-//     state.filter(item => item.id !== action.payload),
-// });
-
-// const loading = createReducer(false, {
-//   [getContactsRequest]: () => true,
-//   [addContactRequest]: () => true,
-//   [deleteContactRequest]: () => true,
-//   [getContactsSuccess]: () => false,
-//   [addContactSuccess]: () => false,
-//   [deleteContactSuccess]: () => false,
-//   [getContactsError]: () => false,
-//   [addContactError]: () => false,
-//   [deleteContactError]: () => false,
-// });
-
-// const contactsReducer = combineReducers({ items, filter, loading });
-
 const contactsReducer = combineReducers({ items, filter, isLoading, error });
 
 export default contactsReducer;

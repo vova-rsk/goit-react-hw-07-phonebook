@@ -12,12 +12,3 @@ export const getFilteredItems = createSelector(
     );
   },
 );
-
-// export const getFilteredItems = state => {
-//   const items = getItems(state);
-//   const filter = getFilter(state);
-//   console.log('ререндер');
-//   return items.filter(({ name }) =>
-//     name.toLowerCase().includes(filter.toLowerCase()),
-//   );
-// };
